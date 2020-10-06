@@ -1,7 +1,6 @@
 %  im - input images, let us make them all grayscale only, so it is a  h x w matrix
 %  opt.type = { ‘sift’, ‘dsft’} for sift and densesift
 %  f - n x d matrix containing n features of d dimension
-% DONE
 
 function d = getImageFeatures(im, opt)
 % run vl_feat setup
@@ -16,6 +15,8 @@ if opt == "sift"
 elseif opt == "dsft" 
     [~, d] = vl_dsift(im);
 end
+
+d = double(d);
 return;
 
     
